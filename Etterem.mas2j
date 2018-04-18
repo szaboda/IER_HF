@@ -1,19 +1,14 @@
-/* Jason Project */
-
-MAS etterem {
-
-    infrastructure: Centralised
-
+/* Jason Project */
+
+MAS etterem {
+
+    infrastructure: Centralised
+
     environment: EtteremEnv
 
-    agents:
+    agents:
         rendeles;
-
         anyag;
-
         etel;
-
         pincer;
-
-}
-
+}
