@@ -15,7 +15,7 @@ hozzavalo(8, [9, 10]).
 hozzavalo(9, [1, 2, 8, 11, 12]).
 eddigiek([]).
 
-/* Initial goals */
+/* Initial goals   */
 
 !start.
 
