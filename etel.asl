@@ -13,7 +13,8 @@ hozzavalo(7, [0, 10, 12]).
 hozzavalo(8, [9, 10]).
 hozzavalo(9, [1, 2, 8, 11, 12]).
 
-/* Initial goals */
+/* Initial goals   */
+
 !start.
 
 /* Plans */
