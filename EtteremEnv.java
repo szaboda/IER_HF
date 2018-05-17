@@ -32,6 +32,8 @@ public class EtteremEnv extends Environment {
 		}
 		else if(action.getFunctor().equals("getRendeles")){
 			JFrame frame=new JFrame();
+			Object rendelo=JOptionPane.showInputDialog(frame, "Ki a rendelõ?");
+			Object rendeles=JOptionPane.showInputDialog(frame, "Mit rendel? (0-9)");
 			Object result=JOptionPane.showInputDialog(frame, "Melyik alapanyag hianyozzon? (0-12)");
 			String s="hianyzik"+result;
 			addPercept("anyag", Literal.parseLiteral(s));
