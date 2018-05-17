@@ -35,8 +35,12 @@ public class EtteremEnv extends Environment {
 			Object rendelo=JOptionPane.showInputDialog(frame, "Ki a rendelő?");
 			Object rendeles=JOptionPane.showInputDialog(frame, "Mit rendel? (0-9)");
 			Object result=JOptionPane.showInputDialog(frame, "Melyik alapanyag hianyozzon? (0-12)");
-			String s="hianyzik("+result+")";
-			addPercept("anyag", Literal.parseLiteral(s));
+			String ro="rendelo("+rendelo+")";
+			String res="rendeles("+rendeles+")";
+			String h="hianyzik("+result+")";
+			addPercept("rendeles", Literal.parseLiteral(ro));
+			addPercept("rendeles", Literal.parseLiteral(res));
+			addPercept("anyag", Literal.parseLiteral(h));
 			return true;
 		}
 		else{
