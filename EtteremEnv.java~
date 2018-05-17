@@ -1,42 +1,41 @@
-// Environment code for project Etterem.mas2j
-
-import jason.asSyntax.*;
-import jason.environment.*;
-import java.util.logging.*;
-
-public class EtteremEnv extends Environment {
-
-    private Logger logger = Logger.getLogger("Etterem.mas2j."+EtteremEnv.class.getName());
-
-    /** Called before the MAS execution with the args informed in .mas2j */
-    @Override
-    public void init(String[] args) {
-        /*super.init(args);
-        addPercept(ASSyntax.parseLiteral("percept(demo)"));*/
-    }
-
-    @Override
-    public boolean executeAction(String agName, Structure action) {
-        
+// Environment code for project Etterem.mas2j
+
+import jason.asSyntax.*;
+import jason.environment.*;
+import java.util.logging.*;
+
+public class EtteremEnv extends Environment {
+
+    private Logger logger = Logger.getLogger("Etterem.mas2j."+EtteremEnv.class.getName());
+
+    /** Called before the MAS execution with the args informed in .mas2j */
+    @Override
+    public void init(String[] args) {
+        /*super.init(args);
+        addPercept(ASSyntax.parseLiteral("percept(demo)"));*/
+    }
+
+    @Override
+    public boolean executeAction(String agName, Structure action) {
         if (action.getFunctor().equals("putanyag")) {
-			addPercept(Literal.parseLiteral("anyagperc"));
+			String s="anyagperc"+action.getTerm(0);
+			addPercept("etel", Literal.parseLiteral(s));
 			return true;
-             //informAgsEnvironmentChanged();
-        }
+        }
 		else if(action.getFunctor().equals("putetel")){
-			addPercept(Literal.parseLiteral("etelperc"));
+			addPercept("pincer", Literal.parseLiteral("etelperc"));
 			return true;
 		}
 		else{
 			logger.info("executing: "+action+", but not implemented!");
 			return false;
 		}
-    }
-
-    /** Called before the end of MAS execution */
-    @Override
-    public void stop() {
-        super.stop();
-    }
-}
+    }
+
+    /** Called before the end of MAS execution */
+    @Override
+    public void stop() {
+        super.stop();
+    }
+}
 
