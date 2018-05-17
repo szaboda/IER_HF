@@ -3,6 +3,9 @@
 import jason.asSyntax.*;
 import jason.environment.*;
 import java.util.logging.*;
+import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class EtteremEnv extends Environment {
 
@@ -11,6 +14,7 @@ public class EtteremEnv extends Environment {
     /** Called before the MAS execution with the args informed in .mas2j */
     @Override
     public void init(String[] args) {
+
         /*super.init(args);
         addPercept(ASSyntax.parseLiteral("percept(demo)"));*/
     }
@@ -26,6 +30,12 @@ public class EtteremEnv extends Environment {
 			addPercept("pincer", Literal.parseLiteral("etelperc"));
 			return true;
 		}
+		else if(action.getFuntctor().equals("getRendeles")){
+			JFrame frame = new JFrame();
+			Object result = JOptionPane.showInputDialog(frame, "Melyik alapanyag hiányozzon? (0-9)");
+			System.out.println(result);
+			return true;
+		}
 		else{
 			logger.info("executing: "+action+", but not implemented!");
 			return false;
@@ -38,4 +48,3 @@ public class EtteremEnv extends Environment {
         super.stop();
     }
 }
-

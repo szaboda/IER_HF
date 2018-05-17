@@ -13,7 +13,6 @@ hozzavalo(6, [2, 5, 6, 11]).
 hozzavalo(7, [0, 10, 12]).
 hozzavalo(8, [9, 10]).
 hozzavalo(9, [1, 2, 8, 11, 12]).
-//hianyzik(2).
 
 /* Initial goals */
 
@@ -21,7 +20,19 @@ hozzavalo(9, [1, 2, 8, 11, 12]).
 
 /* Plans */
 
-+!start : true <- +hianyzik(2).//valami guis bemenet(X): +hianyzik(X).
++hianyzik0 <- +hianyzik(0).
++hianyzik1 <- +hianyzik(1).
++hianyzik2 <- +hianyzik(2).
++hianyzik3 <- +hianyzik(3).
++hianyzik4 <- +hianyzik(4).
++hianyzik5 <- +hianyzik(5).
++hianyzik6 <- +hianyzik(6).
++hianyzik7 <- +hianyzik(7).
++hianyzik8 <- +hianyzik(8).
++hianyzik9 <- +hianyzik(9).
++hianyzik7 <- +hianyzik(10).
++hianyzik8 <- +hianyzik(11).
++hianyzik9 <- +hianyzik(12).
 
 +rendeles(I,N) : true <- +rendelo(I); +rendeles(N); .print("Megkeresem a hozzavalokat a(z) ",N,". etelhez"); ?hozzavalo(N, V); !anyagok(V, 0).
 +!anyagok(V, N) : .length(V,L) & L>N <- ?hianyzik(Y); .nth(N,V,X); ?rendelo(I); ?rendeles(R);

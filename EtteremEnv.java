@@ -30,10 +30,11 @@ public class EtteremEnv extends Environment {
 			addPercept("pincer", Literal.parseLiteral("etelperc"));
 			return true;
 		}
-		else if(action.getFuntctor().equals("getRendeles")){
-			JFrame frame = new JFrame();
-			Object result = JOptionPane.showInputDialog(frame, "Melyik alapanyag hiányozzon? (0-9)");
-			System.out.println(result);
+		else if(action.getFunctor().equals("getRendeles")){
+			JFrame frame=new JFrame();
+			Object result=JOptionPane.showInputDialog(frame, "Melyik alapanyag hianyozzon? (0-12)");
+			String s="hianyzik"+result;
+			addPercept("anyag", Literal.parseLiteral(s));
 			return true;
 		}
 		else{
