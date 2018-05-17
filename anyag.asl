@@ -13,6 +13,7 @@ hozzavalo(6, [2, 5, 6, 11]).
 hozzavalo(7, [0, 10, 12]).
 hozzavalo(8, [9, 10]).
 hozzavalo(9, [1, 2, 8, 11, 12]).
+//hianyzik(2).
 
 /* Initial goals */
 
@@ -20,6 +21,12 @@ hozzavalo(9, [1, 2, 8, 11, 12]).
 
 /* Plans */
 
-+rendeles(I,N) : true <- .print("Megkeresem a hozzavalokat a(z) ",N,". etelhez"); ?hozzavalo(N, V); !anyagok(V, 0); .send(etel, tell, kesz(I,N)).
-+!anyagok(V, N) : .min([N,.length(V)-1],N) <- .nth(N,V,X); .print("Kornyezetbe ",X,". hozzavalo"); putanyag(X); !anyagok(V, N+1).
++!start : true <- +hianyzik(2).//valami guis bemenet(X): +hianyzik(X).
+
++rendeles(I,N) : true <- +rendelo(I); +rendeles(N); .print("Megkeresem a hozzavalokat a(z) ",N,". etelhez"); ?hozzavalo(N, V); !anyagok(V, 0).
++!anyagok(V, N) : .length(V,L) & L>N <- ?hianyzik(Y); .nth(N,V,X); ?rendelo(I); ?rendeles(R);
+		if(X==Y){.print("[Raktaros GUI] Elfogyott a(z) ",X,". hozzavalo, hozzal belole!"); .send(pincer, tell, turelem(I,R)); .wait(3000); -hianyzik(Y); +hianyzik(-1); !anyagok(V,N)} 
+		else{.print("Kornyezetbe ",X,". hozzavalo"); putanyag(X); if(L>N+1){!anyagok(V,N+1)} else{.send(etel, tell, kesz(I,R))}}.
 +!anyagok(_, _).
+
+
