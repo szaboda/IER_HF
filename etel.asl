@@ -1,4 +1,4 @@
-// Agent etel in project tunyacsap.mas2j
+// Agent etel in project Etterem.mas2j
 
 /* Initial beliefs and rules */
 //A szakacs is ismeri a recepteket, megnezi, jokat kapott-e

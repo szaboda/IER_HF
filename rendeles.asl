@@ -1,4 +1,4 @@
-// Agent rendeles in project tunyacsap.mas2j
+// Agent rendeles in project Etterem.mas2j
 
 /* Initial beliefs and rules */
 

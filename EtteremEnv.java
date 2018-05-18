@@ -1,5 +1,5 @@
-// Environment code for project tunyacsap.mas2j
-
+// Environment code for project Etterem.mas2j
+
 import jason.asSyntax.*;
 import jason.environment.*;
 import java.util.logging.*;
@@ -33,7 +33,7 @@ public class EtteremEnv extends Environment {
 		}
 		else if(action.getFunctor().equals("getRendeles")){
 			JFrame frame=new JFrame();
-			Object rendelo=JOptionPane.showInputDialog(frame, "Ki a rendelõ?");
+			Object rendelo=JOptionPane.showInputDialog(frame, "Ki a rendelo?");
 			Object rendeles=JOptionPane.showInputDialog(frame, "Mit rendel? (0-9)");
 			Object result=JOptionPane.showInputDialog(frame, "Melyik alapanyag hianyozzon? (0-12)");
 

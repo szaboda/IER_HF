@@ -1,4 +1,4 @@
-// Agent anyag in project tunyacsap.mas2j
+// Agent anyag in project Etterem.mas2j
 
 /* Initial beliefs and rules */
 
@@ -19,6 +19,7 @@ hozzavalo(9, [1, 2, 8, 11, 12]).
 !start.
 
 /* Plans */
+
 +hianyzik(N) : true <- +hianyzik(N).
 +rendeles(I,N) : true <- +rendelo(I); +rendeles(N); .print("Megkeresem a hozzavalokat a(z) ",N,". etelhez"); ?hozzavalo(N, V); !anyagok(V, 0).
 +!anyagok(V, N) : .length(V,L) & L>N <- ?hianyzik(Y); .nth(N,V,X); ?rendelo(I); ?rendeles(R);

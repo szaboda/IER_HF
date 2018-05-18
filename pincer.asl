@@ -1,4 +1,4 @@
-// Agent pincer in project tunyacsap.mas2j
+// Agent pincer in project Etterem.mas2j
 
 /* Initial beliefs and rules */
 
