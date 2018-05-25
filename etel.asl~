@@ -1,7 +1,5 @@
-// Agent etel in project Etterem.mas2j
-
-
-
+// Agent etel in project Etterem.mas2j
+
 /* Initial beliefs and rules */
 //A szakacs is ismeri a recepteket, megnezi, jokat kapott-e
 hozzavalo(0, [1, 5, 7]).
@@ -17,7 +15,7 @@ hozzavalo(9, [1, 2, 8, 11, 12]).
 
 /* Initial goals   */
 
-//!start.
+!start.
 
 /* Plans */
 +anyagperc(N) <- .print("Megvan a(z) ",N,". anyag"); +hv(N).

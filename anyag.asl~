@@ -1,7 +1,5 @@
-// Agent anyag in project Etterem.mas2j
-
-
-
+// Agent anyag in project Etterem.mas2j
+
 /* Initial beliefs and rules */
 
 //Ismeri a recepteket: melyik etelhez milyen hozzavalok kellenek
@@ -18,7 +16,7 @@ hozzavalo(9, [1, 2, 8, 11, 12]).
 
 /* Initial goals */
 
-//!start.
+!start.
 
 /* Plans */
 
